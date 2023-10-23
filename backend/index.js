@@ -12,6 +12,9 @@ const app = express();
 
 app.use(helmet());
 app.use(express.json());
+app.use(cors());
+
+dotenv.config();
 
 app.get("/", (req, res) => {
   console.log(req);
@@ -21,7 +24,7 @@ app.get("/", (req, res) => {
 app.use("/books", readingRoutes);
 
 mongoose
-  .connect(LOCALDB)
+  .connect(process.env.MONGO_URI)
   .then(() => {
     console.log("App connected to database");
     app.listen(PORT, () => {
