@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import BookMenu from "../components/BookMenu";
+import BooksCard from "../components/home/BooksCard";
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
       <Navbar />
       <Hero />
       <BookMenu />
+      <BooksCard />
     </main>
   );
 };

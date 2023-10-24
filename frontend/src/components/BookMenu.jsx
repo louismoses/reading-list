@@ -5,7 +5,7 @@ import { IoBookSharp } from "react-icons/io5";
 
 const BookMenu = () => {
   return (
-    <section className="max-w-screen-2xl mx-auto py-3 md:px-2 flex gap-6">
+    <section className="max-w-screen-2xl mx-auto py-3 flex-wrap flex gap-6   lg:place-content-start md:px-2 place-content-center ">
       <div className=" flex items-center gap-1">
         <BsBookshelf className="text-2xl" /> All Books
       </div>

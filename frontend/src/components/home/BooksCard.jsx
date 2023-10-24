@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "../Spinner";
+import BookSingleCard from "./BookSingleCard";
 
 const BooksCard = () => {
   const {
@@ -21,13 +22,11 @@ const BooksCard = () => {
   }
 
   return (
-    <div>
+    <section className="max-w-screen-2xl mx-auto flex gap-6 flex-wrap md:px-3 md:py-2 lg:place-content-start place-content-center">
       {books.data.map((item) => (
-        <h2 key={item._id} className="text-4xl">
-          {item.title}
-        </h2>
+        <BookSingleCard key={item._id} book={item} />
       ))}
-    </div>
+    </section>
   );
 };
 
