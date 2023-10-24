@@ -5,7 +5,7 @@ import { IoBookSharp } from "react-icons/io5";
 
 const BookMenu = () => {
   return (
-    <div className="max-w-screen-2xl mx-auto py-3 md:px-2 flex gap-6">
+    <section className="max-w-screen-2xl mx-auto py-3 md:px-2 flex gap-6">
       <div className=" flex items-center gap-1">
         <BsBookshelf className="text-2xl" /> All Books
       </div>
@@ -18,7 +18,7 @@ const BookMenu = () => {
       <div className=" flex items-center gap-1">
         <IoBookSharp className="text-2xl" /> Progress
       </div>
-    </div>
+    </section>
   );
 };
 
