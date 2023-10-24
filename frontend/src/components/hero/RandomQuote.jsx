@@ -3,7 +3,7 @@ import Spinner from "../Spinner";
 
 const RandomQuote = () => {
   const { isLoading, error, data } = useQuery({
-    queryKey: ["repoData"],
+    queryKey: ["quotes"],
     queryFn: () =>
       fetch("https://type.fit/api/quotes").then((res) => res.json()),
   });
@@ -20,12 +20,11 @@ const RandomQuote = () => {
 
   const [quoteAuthor, quoteType] = author.split(",");
 
-  console.log(data);
   return (
-    <div>
+    <>
       <h2>{text}</h2>
-      <h3>~{quoteAuthor}</h3>
-    </div>
+      <h5>~{quoteAuthor}</h5>
+    </>
   );
 };
 

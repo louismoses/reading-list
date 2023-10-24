@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Roboto";
+  src: url(./assets/fonts/Roboto/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: "News Reader";
+  src: url(./assets/fonts/Newsreader/Newsreader-VariableFont_opsz\wght.ttf);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "News Reader";
+}
+
 .spinner-center {
   height: 100vh;
   display: flex;
@@ -9,10 +24,7 @@
   align-items: center;
 }
 
-/**
-  * Book
-  * @author jh3y - jheytompkins.com
-*/
+/* Spinner */
 @-webkit-keyframes whirl-book {
   0% {
     -webkit-transform: rotateY(0deg);
@@ -86,4 +98,28 @@
 .book div:nth-child(5) {
   -webkit-animation-delay: 0.75s;
   animation-delay: 0.75s;
+}
+
+/* Hero */
+.hero {
+  background-image: linear-gradient(
+      to bottom,
+      rgb(255 183 77 / 15%),
+      rgb(33 150 243 / 50%)
+    ),
+    url(https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  font-family: "Roboto";
+}
+
+.hero h2 {
+  font-size: 40px;
+}
+
+.hero h2,
+.hero h5 {
+  text-shadow: 4px 4px 8px #000;
 }

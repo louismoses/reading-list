@@ -3,7 +3,7 @@ import { FcReadingEbook, FcSearch } from "react-icons/fc";
 const Navbar = () => {
   return (
     <section className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto ">
-      <div className="flex place-items-center px-2 py-3 hover:translate-x-1 hover:bg-slate-50 ">
+      <div className="flex place-items-center px-2 py-3 hover:translate-x-1 hover:bg-slate-50 cursor-pointer ">
         <FcReadingEbook className="text-5xl" />
         <h1 className="self-center text-2xl font-semibold whitespace-nowrap">
           Reading List

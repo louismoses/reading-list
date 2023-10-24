@@ -3,7 +3,11 @@ import RandomQuote from "./hero/RandomQuote";
 const Hero = () => {
   return (
     <section>
-      <RandomQuote />
+      <div className="text-center h-[50vh] flex place-items-center justify-center hero">
+        <div>
+          <RandomQuote />
+        </div>
+      </div>
     </section>
   );
 };
