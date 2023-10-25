@@ -1,9 +1,12 @@
 import { FcInfo, FcFullTrash } from "react-icons/fc";
 import { CiEdit } from "react-icons/ci";
+import { useState } from "react";
 
 import BookDetailModal from "../modals/BookDetailModal";
 
 const BookSingleCard = ({ book }) => {
+  const [showBookDetail, setShowBookDetail] = useState(false);
+
   return (
     <section>
       <div key={book._id} className=" max-w-[230px] border rounded-lg">
@@ -19,12 +22,17 @@ const BookSingleCard = ({ book }) => {
           <p>Status: {book.status}</p>
         </div>
         <div className="flex px-6 py-2 gap-4 place-content-between">
-          <FcInfo className="text-2xl" />
+          <FcInfo
+            className="text-2xl"
+            onClick={() => setShowBookDetail(true)}
+          />
           <CiEdit className="text-2xl" />
           <FcFullTrash className="text-2xl" />
         </div>
       </div>
-      <BookDetailModal />
+      {showBookDetail && (
+        <BookDetailModal book={book} onClose={() => setShowBookDetail(false)} />
+      )}
     </section>
   );
 };
