@@ -1,38 +1,13 @@
+import { useMutation } from "@tanstack/react-query";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import { useState } from "react";
 import axios from "axios";
-import { useSnackbar } from "notistack";
-import Spinner from "../Spinner";
-import { useNavigate } from "react-router-dom";
 
 const AddBookModal = ({ onClose }) => {
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
-  const [publishYear, setPublishYear] = useState("");
-  const [loading, setLoading] = useState(false);
-  const { enqueueSnackbar } = useSnackbar();
-  const navigate = useNavigate();
-  const handelSaveBook = () => {
-    const data = {
-      title,
-      author,
-      publishYear,
-    };
-    setLoading(true);
-    axios
-      .post("http://localhost:3000/books", data)
-      .then(() => {
-        setLoading(false);
-        enqueueSnackbar("Book Created Successfully", { variant: "success" });
-        navigate("/");
-        onClose;
-      })
-      .catch((err) => {
-        console.log(err.message);
-        enqueueSnackbar("Error", { variant: "error" });
-        setLoading(false);
-      });
-  };
+  const mutation = useMutation({
+    mutationFn: (newBook) => {
+      return axios.post("http://localhost:3000/books", newBook);
+    },
+  });
 
   return (
     <div
@@ -47,43 +22,31 @@ const AddBookModal = ({ onClose }) => {
           className="text-red-800 absolute right-4 top-4 cursor-pointer text-2xl"
           onClick={onClose}
         />
+        <h3 className="text-2xl">Create Book</h3>
+        {/* testing mutation */}
         <div>
-          <h2 className="text-3xl my4">Create Book</h2>
-          {loading ? <Spinner /> : ""}
-          <div className="flex flex-col rounded-xl w[600px] p-4 mx-auto">
-            <div className="my-4">
-              <label htmlFor="" className="text-xl mr-4 text-gray-500">
-                Title
-              </label>
-              <input
-                type="text"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                className="border-2 border-gray-500 px-4 py-2 w-full"
-              />
-              <label htmlFor="" className="text-xl mr-4 text-gray-500">
-                Author
-              </label>
-              <input
-                type="text"
-                value={author}
-                onChange={(e) => setAuthor(e.target.value)}
-                className="border-2 border-gray-500 px-4 py-2 w-full"
-              />
-              <label htmlFor="" className="text-xl mr-4 text-gray-500">
-                Publish Year
-              </label>
-              <input
-                type="text"
-                value={publishYear}
-                onChange={(e) => setPublishYear(e.target.value)}
-                className="border-2 border-gray-500 px-4 py-2 w-full"
-              />
-            </div>
-            <button className="p-2 bg-sky-300 m-8" onClick={handelSaveBook}>
-              Save
-            </button>
-          </div>
+          {mutation.isLoadding ? (
+            <Spinner />
+          ) : (
+            <>
+              {mutation.isError ? <div>{mutation.error.message}</div> : null}
+              {mutation.isSuccess ? <div>New Book added</div> : null}
+
+              <button
+                onClick={() => {
+                  mutation.mutate({
+                    id: new Date(),
+                    title: "do laundry4",
+                    author: "ses",
+                    publishYear: 50505,
+                  });
+                  onClose();
+                }}
+              >
+                Save
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>
