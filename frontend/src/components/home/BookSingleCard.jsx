@@ -14,6 +14,8 @@ const BookSingleCard = ({ book }) => {
           src="https://placehold.co/228x228"
           alt={book.title}
           className="rounded-t-lg"
+          width="228px"
+          height="228px"
         />
         <div className="py-2 px-3">
           <h2 className=" text-2xl font-bold uppercase">{book.title}</h2>

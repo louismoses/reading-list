@@ -15,7 +15,10 @@ const BookDetailModal = ({ book, onClose }) => {
           onClick={onClose}
         />
         <h2 className="text-4xl uppercase">{book.title}</h2>
-        <p></p>
+        <p>{book.author}(Author)</p>
+        <p>{book.publishYear}(Year Published)</p>
+        <p>status: {book.status}</p>
+        <p>{book.note}</p>
       </div>
     </div>
   );

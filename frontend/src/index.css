@@ -5,10 +5,13 @@
 @font-face {
   font-family: "Roboto";
   src: url(./assets/fonts/Roboto/Roboto-Regular.ttf);
+  font-display: swap;
 }
+
 @font-face {
   font-family: "News Reader";
   src: url(./assets/fonts/Newsreader/Newsreader-VariableFont.ttf);
+  font-display: swap;
 }
 
 h1,
