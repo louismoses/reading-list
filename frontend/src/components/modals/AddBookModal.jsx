@@ -64,35 +64,39 @@ const AddBookModal = ({ onClose }) => {
                   placeholder="Title"
                   name="title"
                   onChange={handleChange}
+                  className="border w-full text-black"
                 />
                 <input
                   value={newBook.author}
                   placeholder="Author"
                   name="author"
                   onChange={handleChange}
+                  className="border w-full text-black"
                 />
                 <input
                   value={newBook.publishYear}
                   placeholder="Publish Year"
                   name="publishYear"
                   onChange={handleChange}
+                  className="border w-full text-black"
                 />
                 <select
                   name="status"
                   onChange={handleChange}
-                  value={newBook.status} // You can remove this line
+                  value={newBook.status}
+                  className="border w-full text-black"
                 >
                   <option value="To Read">To Read</option>
                   <option value="In Progress">In Progress</option>
                   <option value="Done">Done</option>
                 </select>
-                {console.log(newBook)}
                 <textarea
                   name="note"
                   cols="100%"
                   rows="10"
                   defaultValue={newBook.note}
                   onChange={handleChange}
+                  className="border w-full text-black"
                 ></textarea>
                 <button onClick={handleSave}>Save</button>
               </div>
