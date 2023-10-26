@@ -4,10 +4,12 @@ import { useState } from "react";
 
 import BookDetailModal from "../modals/BookDetailModal";
 import DeleteBookModal from "../modals/DeleteBookModal";
+import EditBookModal from "../modals/EditBookModal";
 
 const BookSingleCard = ({ book }) => {
   const [showBookDetail, setShowBookDetail] = useState(false);
   const [deleteBook, setDeleteBook] = useState(false);
+  const [editBook, setEditBook] = useState(false);
 
   return (
     <section>
@@ -27,18 +29,29 @@ const BookSingleCard = ({ book }) => {
         </div>
         <div className="flex px-6 py-2 gap-4 place-content-between">
           <FcInfo
-            className="text-2xl"
+            className="text-2xl cursor-pointer"
             onClick={() => setShowBookDetail(true)}
           />
-          <CiEdit className="text-2xl" />
+          <CiEdit
+            className="text-2xl cursor-pointer"
+            onClick={() => setEditBook(true)}
+          />
           <FcFullTrash
-            className="text-2xl"
+            className="text-2xl cursor-pointer"
             onClick={() => setDeleteBook(true)}
           />
         </div>
       </div>
       {showBookDetail && (
         <BookDetailModal book={book} onClose={() => setShowBookDetail(false)} />
+      )}
+      {editBook && (
+        <EditBookModal
+          book={book}
+          onClose={() => {
+            setEditBook(false);
+          }}
+        />
       )}
       {deleteBook && (
         <DeleteBookModal book={book} onClose={() => setDeleteBook(false)} />

@@ -49,7 +49,7 @@ const AddBookModal = ({ onClose }) => {
           className="text-red-800 absolute right-4 top-4 cursor-pointer text-2xl"
           onClick={onClose}
         />
-        <h3 className="text-2xl">New Book</h3>
+        <h3 className="text-4xl uppercase">New Book</h3>
         <hr />
         <div>
           {mutation.isLoadding ? (

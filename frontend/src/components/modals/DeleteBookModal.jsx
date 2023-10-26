@@ -35,7 +35,7 @@ const DeleteBookModal = ({ book, onClose }) => {
             {deletion.isError ? <div>{deletion.error.message}</div> : null}
             {deletion.isSuccess ? (
               <div>
-                <h2>Book Deleted</h2>
+                <h2 className="text-4xl uppercase">Book Deleted</h2>
                 <button onClick={onClose}>Close</button>
               </div>
             ) : null}
