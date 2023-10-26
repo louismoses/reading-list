@@ -2,8 +2,17 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import axios from "axios";
 import Spinner from "../Spinner";
+import { useState } from "react";
 
 const AddBookModal = ({ onClose }) => {
+  const [newBook, setNewBook] = useState({
+    title: "",
+    author: "",
+    publishYear: "",
+    status: "To Read",
+    note: "",
+  });
+
   const queryClient = useQueryClient();
   const mutation = useMutation({
     mutationFn: (newBook) => {
@@ -13,14 +22,19 @@ const AddBookModal = ({ onClose }) => {
     },
   });
   const handleSave = () => {
-    mutation.mutate({
-      id: new Date(),
-      title: "test add invalidation1",
-      author: "ses",
-      publishYear: 50505,
-    });
+    mutation.mutate(newBook);
     onClose();
   };
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setNewBook((prevBook) => {
+      return {
+        ...prevBook,
+        [name]: value,
+      };
+    });
+  }
 
   return (
     <div
@@ -35,8 +49,8 @@ const AddBookModal = ({ onClose }) => {
           className="text-red-800 absolute right-4 top-4 cursor-pointer text-2xl"
           onClick={onClose}
         />
-        <h3 className="text-2xl">Create Book</h3>
-        {/* testing mutation */}
+        <h3 className="text-2xl">New Book</h3>
+        <hr />
         <div>
           {mutation.isLoadding ? (
             <Spinner />
@@ -44,8 +58,44 @@ const AddBookModal = ({ onClose }) => {
             <>
               {mutation.isError ? <div>{mutation.error.message}</div> : null}
               {mutation.isSuccess ? <div>New Book added</div> : null}
-
-              <button onClick={handleSave}>Save</button>
+              <div>
+                <input
+                  value={newBook.title}
+                  placeholder="Title"
+                  name="title"
+                  onChange={handleChange}
+                />
+                <input
+                  value={newBook.author}
+                  placeholder="Author"
+                  name="author"
+                  onChange={handleChange}
+                />
+                <input
+                  value={newBook.publishYear}
+                  placeholder="Publish Year"
+                  name="publishYear"
+                  onChange={handleChange}
+                />
+                <select
+                  name="status"
+                  onChange={handleChange}
+                  value={newBook.status} // You can remove this line
+                >
+                  <option value="To Read">To Read</option>
+                  <option value="In Progress">In Progress</option>
+                  <option value="Done">Done</option>
+                </select>
+                {console.log(newBook)}
+                <textarea
+                  name="note"
+                  cols="100%"
+                  rows="10"
+                  defaultValue={newBook.note}
+                  onChange={handleChange}
+                ></textarea>
+                <button onClick={handleSave}>Save</button>
+              </div>
             </>
           )}
         </div>
