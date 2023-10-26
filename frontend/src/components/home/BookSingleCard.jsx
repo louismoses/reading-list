@@ -3,9 +3,11 @@ import { CiEdit } from "react-icons/ci";
 import { useState } from "react";
 
 import BookDetailModal from "../modals/BookDetailModal";
+import DeleteBookModal from "../modals/DeleteBookModal";
 
 const BookSingleCard = ({ book }) => {
   const [showBookDetail, setShowBookDetail] = useState(false);
+  const [deleteBook, setDeleteBook] = useState(false);
 
   return (
     <section>
@@ -29,11 +31,17 @@ const BookSingleCard = ({ book }) => {
             onClick={() => setShowBookDetail(true)}
           />
           <CiEdit className="text-2xl" />
-          <FcFullTrash className="text-2xl" />
+          <FcFullTrash
+            className="text-2xl"
+            onClick={() => setDeleteBook(true)}
+          />
         </div>
       </div>
       {showBookDetail && (
         <BookDetailModal book={book} onClose={() => setShowBookDetail(false)} />
+      )}
+      {deleteBook && (
+        <DeleteBookModal book={book} onClose={() => setDeleteBook(false)} />
       )}
     </section>
   );
