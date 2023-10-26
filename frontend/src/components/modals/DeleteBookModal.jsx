@@ -1,16 +1,16 @@
 import axios from "axios";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import Spinner from "../Spinner";
 
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
 const DeleteBookModal = ({ book, onClose }) => {
-  console.log(book._id);
+  const queryClient = useQueryClient();
   const deletion = useMutation({
     mutationFn: (deleteBook) => {
-      return axios.delete(
-        `http://localhost:3000/books/${book._id}`,
-        deleteBook
-      );
+      return axios
+        .delete(`http://localhost:3000/books/${book._id}`, deleteBook)
+        .then(() => queryClient.invalidateQueries({ queryKey: ["books"] }));
     },
   });
 
