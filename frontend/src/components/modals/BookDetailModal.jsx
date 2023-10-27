@@ -8,17 +8,42 @@ const BookDetailModal = ({ book, onClose }) => {
     >
       <div
         onClick={(event) => event.stopPropagation()}
-        className="w-[600px] max-w-full h-[400px]  bg-white rounded-xl p-4 flex-col relative"
+        className="w-[600px] max-w-full min-h-[400px]  bg-white rounded-xl p-4 flex-col relative"
       >
         <AiOutlineCloseCircle
           className="text-red-800 absolute right-4 top-4 cursor-pointer text-2xl"
           onClick={onClose}
         />
-        <h2 className="text-4xl uppercase">{book.title}</h2>
-        <p>{book.author}(Author)</p>
-        <p>{book.publishYear}(Year Published)</p>
-        <p>status: {book.status}</p>
-        <p>{book.note}</p>
+        <div className="flex place-items-center gap-2">
+          {/* <FcNews className="text-3xl" /> */}
+          <h2 className="text-3xl uppercase text-slate-800 p-2 flex-wrap">
+            {book.title}
+          </h2>
+        </div>
+        <div className="p-2 my-1 w-full  border-b flex place-items-center">
+          <span className="mr-1">Author : </span>
+          <h3> {book.author}</h3>
+        </div>
+        <div className="p-2 my-1 w-full  border-b flex place-items-center">
+          <span className="mr-1">Publish Year : </span>
+          <h3> {book.publishYear}</h3>
+        </div>
+        <div className="p-2 my-1 w-full   flex place-items-center">
+          <span className="mr-1">Status : </span>
+          <h3> {book.status}</h3>
+        </div>
+
+        <p className="max-h-[130px] overflow-auto border p-1.5">
+          <span className="italic">Note :</span> {book.note}
+        </p>
+        <div className=" absolute bottom-2 text-sm italic">
+          <p>
+            Last Updated : <span>{book.updatedAt}</span>
+          </p>
+          <p>
+            Created : <span>{book.createdAt}</span>
+          </p>
+        </div>
       </div>
     </div>
   );

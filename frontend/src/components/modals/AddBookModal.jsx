@@ -56,7 +56,7 @@ const AddBookModal = ({ onClose }) => {
     >
       <div
         onClick={(event) => event.stopPropagation()}
-        className="max-w-[600px] max-w-full min-h-[400px]  bg-white rounded-xl p-4 flex-col relative"
+        className="max-w-[600px] min-h-[400px]  bg-white rounded-xl p-4 flex-col relative"
       >
         <AiOutlineCloseCircle
           className="text-red-800 absolute right-4 top-4 cursor-pointer text-2xl"
@@ -73,7 +73,7 @@ const AddBookModal = ({ onClose }) => {
             <>
               <div>
                 <label htmlFor="title" className="text-sm text-gray-400 italic">
-                  Title:{" "}
+                  Title:
                   <span className="text-xs text-red-300">
                     {!newBook.title && "(required)"}
                   </span>
@@ -89,7 +89,7 @@ const AddBookModal = ({ onClose }) => {
                   htmlFor="author"
                   className="text-sm text-gray-400 italic"
                 >
-                  Author:{" "}
+                  Author:
                   <span className="text-xs text-red-300">
                     {!newBook.title && "(required)"}
                   </span>
@@ -102,7 +102,7 @@ const AddBookModal = ({ onClose }) => {
                   className="border border-green-700 p-2 my-1 w-full rounded-lg "
                 />
                 <label htmlFor="title" className="text-sm text-gray-400 italic">
-                  Publish Year:{" "}
+                  Publish Year:
                   <span className="text-xs text-red-300">
                     {!newBook.title && "(required)"}
                   </span>
@@ -140,6 +140,7 @@ const AddBookModal = ({ onClose }) => {
                   rows="10"
                   defaultValue={newBook.note}
                   onChange={handleChange}
+                  placeholder="note..."
                   className="border border-green-700 p-2 my-1 w-full rounded-lg"
                 ></textarea>
                 <button

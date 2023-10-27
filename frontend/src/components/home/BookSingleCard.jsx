@@ -15,7 +15,7 @@ const BookSingleCard = ({ book }) => {
     <section>
       <div key={book._id} className=" max-w-[230px] border rounded-lg">
         <img
-          src="https://placehold.co/228x228"
+          src="https://img.freepik.com/free-photo/old-books-with-white-background_23-2148898329.jpg?w=1380&t=st=1698385817~exp=1698386417~hmac=b29020de5ff122cd96f0e49186c93f19affd5faa277462dbb0a68c7831dd48ea"
           alt={book.title}
           className="rounded-t-lg"
           width="228px"
