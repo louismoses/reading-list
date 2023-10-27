@@ -5,7 +5,6 @@ import { FcNews } from "react-icons/fc";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import Spinner from "../Spinner";
 import axios from "axios";
-import { useFormContext } from "react-hook-form";
 
 const AddBookModal = ({ onClose }) => {
   const [newBook, setNewBook] = useState({
@@ -64,7 +63,7 @@ const AddBookModal = ({ onClose }) => {
         />
         <div className="flex place-items-center gap-2">
           <FcNews className="text-3xl" />
-          <h3 className="text-3xl uppercase text-slate-800">New Book</h3>
+          <h2 className="text-3xl uppercase text-slate-800">New Book</h2>
         </div>
         <div>
           {mutation.isLoadding ? (
