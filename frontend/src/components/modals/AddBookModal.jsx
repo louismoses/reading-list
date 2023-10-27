@@ -136,7 +136,7 @@ const AddBookModal = ({ onClose }) => {
                 <textarea
                   name="note"
                   cols="100%"
-                  rows="10"
+                  rows="5"
                   defaultValue={newBook.note}
                   onChange={handleChange}
                   placeholder="note..."

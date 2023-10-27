@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 
 const Home = () => {
   return (
-    <main>
+    <main className="pb-20">
       <Navbar />
       <Hero />
       <BookMenu />

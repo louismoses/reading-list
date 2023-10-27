@@ -22,7 +22,7 @@ const RandomQuote = () => {
 
   return (
     <>
-      <h2>{text}</h2>
+      <h2 className="leading-9 sm:leading-normal py-4 px-2 md:p-0">{text}</h2>
       <h5>~{quoteAuthor}</h5>
     </>
   );

@@ -23,7 +23,7 @@ const BooksCard = () => {
 
   return (
     <>
-      <section className="max-w-screen-2xl mx-auto flex gap-6 flex-wrap md:px-3 md:py-2 lg:place-content-start place-content-center">
+      <section className="max-w-screen-2xl mx-auto flex gap-6 flex-wrap md:px-3 md:py-2 lg:place-content-start place-content-center ">
         {books.data.map((item) => (
           <BookSingleCard key={item._id} book={item} />
         ))}
