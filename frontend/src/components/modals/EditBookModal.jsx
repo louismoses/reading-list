@@ -143,7 +143,7 @@ const EditBookModal = ({ book, onClose }) => {
                   rows="10"
                   defaultValue={book.note}
                   onChange={handleChange}
-                  className="border border-orange-600 p-2 my-1 w-full rounded-lg "
+                  className="max-h-[130px] min-h-10 overflow-auto border border-orange-600 p-2 my-1 w-full rounded-lg "
                 ></textarea>
                 <button
                   onClick={handleSaveEdit}
