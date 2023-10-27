@@ -44,3 +44,11 @@ A simple web app for book enthusiasts to track and manage their reading lists. A
  - Forum and book recommendations
 
 ## Sample Screenshots
+
+![image](https://github.com/louismoses/reading-list/assets/51215698/b1c0b24f-eb06-44e9-be28-5ffe8b416220)
+![image](https://github.com/louismoses/reading-list/assets/51215698/0a31a2f7-22bb-4922-a7f1-b3744ccd0944)
+![image](https://github.com/louismoses/reading-list/assets/51215698/d53ff642-e25e-4467-bb7f-b8baf2ae542f)
+
+
+
+
