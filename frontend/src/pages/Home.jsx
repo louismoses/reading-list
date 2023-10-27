@@ -2,6 +2,7 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import BookMenu from "../components/BookMenu";
 import BooksCard from "../components/home/BooksCard";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <Hero />
       <BookMenu />
       <BooksCard />
+      <Footer />
     </main>
   );
 };
