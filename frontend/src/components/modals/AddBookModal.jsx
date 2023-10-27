@@ -78,6 +78,7 @@ const AddBookModal = ({ onClose }) => {
                   placeholder="Publish Year"
                   name="publishYear"
                   onChange={handleChange}
+                  type="number"
                   className="border w-full text-black"
                 />
                 <select

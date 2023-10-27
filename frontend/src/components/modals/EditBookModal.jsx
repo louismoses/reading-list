@@ -55,19 +55,19 @@ const EditBookModal = ({ book, onClose }) => {
               {editing.isSuccess ? <div>New Book added</div> : null}
               <div>
                 <input
-                  value={book.title}
+                  defaultValue={book.title}
                   name="title"
                   onChange={handleChange}
                   className="border w-full text-black"
                 />
                 <input
-                  value={book.author}
+                  defaultValue={book.author}
                   name="author"
                   onChange={handleChange}
                   className="border w-full text-black"
                 />
                 <input
-                  value={book.publishYear}
+                  defaultValue={book.publishYear}
                   name="publishYear"
                   onChange={handleChange}
                   className="border w-full text-black"
@@ -75,7 +75,7 @@ const EditBookModal = ({ book, onClose }) => {
                 <select
                   name="status"
                   onChange={handleChange}
-                  value={book.status}
+                  defaultValue={book.status}
                   className="border w-full text-black"
                 >
                   <option value="To Read">To Read</option>
