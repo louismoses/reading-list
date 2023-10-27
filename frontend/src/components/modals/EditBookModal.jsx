@@ -50,7 +50,7 @@ const EditBookModal = ({ book, onClose }) => {
     >
       <div
         onClick={(event) => event.stopPropagation()}
-        className="w-[600px] max-w-full min-h-[400px]  bg-white rounded-xl p-4 flex-col relative"
+        className="w-[600px] max-w-full min-h-[400px]  bg-white rounded-xl p-4 flex-col relative m-4"
       >
         <AiOutlineCloseCircle
           className="text-red-800 absolute right-4 top-4 cursor-pointer text-2xl"

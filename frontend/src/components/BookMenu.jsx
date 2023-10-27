@@ -15,13 +15,13 @@ const BookMenu = () => {
         <div className=" flex items-center gap-1">
           <BsBookshelf className="text-2xl" /> All Books
         </div>
-        <div className=" flex items-center gap-1">
+        <div className=" flex items-center gap-1 opacity-40">
           <ImBooks className="text-2xl" /> Books to Read
         </div>
-        <div className=" flex items-center gap-1">
+        <div className=" flex items-center gap-1 opacity-40">
           <TbBooksOff className="text-2xl" /> Books Finished
         </div>
-        <div className=" flex items-center gap-1">
+        <div className=" flex items-center gap-1 opacity-40">
           <IoBookSharp className="text-2xl" /> Progress
         </div>
       </div>

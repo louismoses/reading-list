@@ -55,7 +55,7 @@ const AddBookModal = ({ onClose }) => {
     >
       <div
         onClick={(event) => event.stopPropagation()}
-        className="max-w-[600px] min-h-[400px]  bg-white rounded-xl p-4 flex-col relative"
+        className="max-w-[600px] min-h-[400px]  bg-white rounded-xl p-4 flex-col relative m-4"
       >
         <AiOutlineCloseCircle
           className="text-red-800 absolute right-4 top-4 cursor-pointer text-2xl"
